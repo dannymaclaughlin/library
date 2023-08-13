@@ -25,8 +25,9 @@ function addBookToLibrary() {
     readStatus = prompt("Have you read this book yet? yes/no");
 
     const book = new Book(title, author, numOfPages, readStatus);
-    console.log(book);
+    // console.log(book);
     myLibrary.push(book);
+    displayArray();
 }
 
 function displayArray() {
