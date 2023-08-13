@@ -1,7 +1,7 @@
 // -  All of your book objects are going to be stored in a simple array,
 //    so add a function to the script (not the constructor) that:
 //        [x] can take user’s input and
-//        [ ] store the new book objects into an array.
+//        [x] store the new book objects into an array.
 
 // book.info should be written out as:
 // "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
@@ -29,4 +29,11 @@ function addBookToLibrary() {
     myLibrary.push(book);
 }
 
-console.log(myLibrary);
+function displayArray() {
+    let i = 0;
+
+    while (i < myLibrary.length) {
+        console.log(myLibrary[i]);
+        i++;
+    }
+}
