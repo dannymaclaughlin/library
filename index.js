@@ -26,4 +26,7 @@ function addBookToLibrary() {
 
     const book = new Book(title, author, numOfPages, readStatus);
     console.log(book);
+    myLibrary.push(book);
 }
+
+console.log(myLibrary);
