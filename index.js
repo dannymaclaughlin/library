@@ -38,3 +38,5 @@ function displayArray() {
         i++;
     }
 }
+
+// code ran upon page load
