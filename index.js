@@ -1,13 +1,10 @@
-// -  All of your book objects are going to be stored in a simple array,
-//    so add a function to the script (not the constructor) that:
-//        [x] can take user’s input and
-//        [x] store the new book objects into an array.
+// query selectors
+const addNewBookButton = document.querySelector('[data-new-book-button]');
 
-// book.info should be written out as:
-// "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
-
+// declared empty array
 let myLibrary = [];
 
+// built the book constructor
 function Book(title, author, numOfPages, readStatus) {
     this.title = title
     this.author = author
@@ -18,6 +15,10 @@ function Book(title, author, numOfPages, readStatus) {
     }
 }
 
+// built function that will allow for user input of the book information
+// created "book" variable that calls on the Book constructor to turn the user inputted info into a book object
+// after the book object is created, it is pushed to the myLibrary array
+// finally this function calls on the displayArray() function which will iterate through the myLibrary array and console.log each item(book) in the array
 function addBookToLibrary() {
     title = prompt("Book Title");
     author = prompt("Book Author");
@@ -30,6 +31,7 @@ function addBookToLibrary() {
     displayArray();
 }
 
+// this function will iterate through the myLibrary array and console.log each array item(book)
 function displayArray() {
     let i = 0;
 
@@ -39,8 +41,8 @@ function displayArray() {
     }
 }
 
-const addNewBookButton = document.querySelector('[data-new-book-button]');
-
+// added an event listener to the "Add New Book" button that will listen for a click
+// once a click on this button is registered, it will run the addBookToLibrary() function
 addNewBookButton.addEventListener('click', () => {
     addBookToLibrary();
 })
