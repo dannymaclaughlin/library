@@ -7,7 +7,7 @@
 #main-container {
     /* border: 2px solid blue; */
     
-    background-color: #eff6ff;
+    background-color: #dbeafe;
     height: 100vh;
 
     display: flex;
@@ -23,7 +23,10 @@
 }
 
 button {
-    border: none;
-    padding: 1em;
     background-color: #93c5fd;
+    color: #1d3a8a;
+    
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
 }

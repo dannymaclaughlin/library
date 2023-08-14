@@ -39,4 +39,10 @@ function displayArray() {
     }
 }
 
+const addNewBookButton = document.querySelector('[data-new-book-button]');
+
+addNewBookButton.addEventListener('click', () => {
+    addBookToLibrary();
+})
+
 // code ran upon page load
