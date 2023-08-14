@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: helvetica, sans-serif;
 }
 
 #main-container {
@@ -10,21 +12,36 @@
     background-color: #dbeafe;
     height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    grid-template-rows: .5fr 5fr;
 }
+
+.navbar {
+    /* border: 3px solid purple; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo {
+    color: #162554;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 
 .main-content {
     /* border: 2px solid red; */
     
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 button {
     background-color: #93c5fd;
-    color: #1d3a8a;
+    color: #162554;
     
     border: none;
     border-radius: 5px;
