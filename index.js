@@ -1,5 +1,6 @@
 // query selectors
 const addNewBookButton = document.querySelector('[data-new-book-button]');
+const bookPlaceHolder = document.querySelector('[data-book-place-holder]'); 
 
 // declared empty array
 let myLibrary = [];
@@ -26,8 +27,14 @@ function addBookToLibrary() {
     readStatus = prompt("Have you read this book yet? yes/no");
 
     const book = new Book(title, author, numOfPages, readStatus);
-    // console.log(book);
+    
     myLibrary.push(book);
+    
+    bookPlaceHolder.append(book.title)
+    bookPlaceHolder.append(book.author)
+    bookPlaceHolder.append(book.numOfPages)
+    bookPlaceHolder.append(book.readStatus)
+    
     displayArray();
 }
 

@@ -32,11 +32,21 @@
 
 
 .main-content {
-    /* border: 2px solid red; */
+    border: 2px solid red;
+    
+    display: grid;
+    grid-template-rows: .5fr 4fr;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.button-section {
+    border: 3px solid pink;
     
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 button {
@@ -46,4 +56,14 @@ button {
     border: none;
     border-radius: 5px;
     padding: 1em;
+}
+
+.book-place-holder {
+    border: 3px solid green;
+    width: 50px;
+    height: 50px;
+
+    background-color: #eff6ff;
+    display: flex;
+    grid
 }
