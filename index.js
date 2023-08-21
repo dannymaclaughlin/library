@@ -2,10 +2,13 @@
 const addNewBookButton = document.querySelector('[data-new-book-button]');
 const bookPlaceHolder = document.querySelector('[data-book-place-holder]'); 
 
-// declared empty array
+// create elements
+const lineBreak = document.createElement('br');
+
+// declare an empty array
 let myLibrary = [];
 
-// built the book constructor
+// build  the book constructor
 function Book(title, author, numOfPages, readStatus) {
     this.title = title
     this.author = author
@@ -30,22 +33,34 @@ function addBookToLibrary() {
     
     myLibrary.push(book);
     
-    bookPlaceHolder.append(book.title)
-    bookPlaceHolder.append(book.author)
-    bookPlaceHolder.append(book.numOfPages)
-    bookPlaceHolder.append(book.readStatus)
+    // append the user inputted values to .bookPlaceHolder div on the page
+    // bookPlaceHolder.append(book.title);
+    // bookPlaceHolder.appendChild(document.createElement('br'));
+    // bookPlaceHolder.append(book.author);
+    // bookPlaceHolder.appendChild(document.createElement('br'));
+    // bookPlaceHolder.append(book.numOfPages);
+    // bookPlaceHolder.appendChild(document.createElement('br'));
+    // bookPlaceHolder.append(book.readStatus);
     
     displayArray();
 }
 
 // this function will iterate through the myLibrary array and console.log each array item(book)
 function displayArray() {
-    let i = 0;
+    const bookPlaceHolder = document.querySelector('[data-book-place-holder]'); 
 
-    while (i < myLibrary.length) {
-        console.log(myLibrary[i]);
-        i++;
+    for (i = 0; i < myLibrary.length; i++) {
+        // bookPlaceHolder.appendChild(bookCard);
+        // console.log(bookCard);
     }
+
+    bookPlaceHolder.append(book.title);
+    bookPlaceHolder.appendChild(document.createElement('br'));
+    bookPlaceHolder.append(book.author);
+    bookPlaceHolder.appendChild(document.createElement('br'));
+    bookPlaceHolder.append(book.numOfPages);
+    bookPlaceHolder.appendChild(document.createElement('br'));
+    bookPlaceHolder.append(book.readStatus);
 }
 
 // added an event listener to the "Add New Book" button that will listen for a click
