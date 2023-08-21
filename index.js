@@ -15,7 +15,10 @@ function Book(title, author, numOfPages, readStatus) {
     this.numOfPages = numOfPages
     this.readStatus = readStatus
     this.info = function() {
-      return `${title} by ${author}, ${numOfPages}, ${readStatus}`
+      return `Title of book: ${title}<br>
+      Author: ${author}<br>
+      Number of pages: ${numOfPages}<br>
+      Have you read this book? ${readStatus}`
     }
 }
 
@@ -34,33 +37,17 @@ function addBookToLibrary() {
     myLibrary.push(book);
     
     // append the user inputted values to .bookPlaceHolder div on the page
-    // bookPlaceHolder.append(book.title);
-    // bookPlaceHolder.appendChild(document.createElement('br'));
-    // bookPlaceHolder.append(book.author);
-    // bookPlaceHolder.appendChild(document.createElement('br'));
-    // bookPlaceHolder.append(book.numOfPages);
-    // bookPlaceHolder.appendChild(document.createElement('br'));
-    // bookPlaceHolder.append(book.readStatus);
+
+    bookPlaceHolder.innerHTML += book.info();
     
     displayArray();
 }
 
 // this function will iterate through the myLibrary array and console.log each array item(book)
 function displayArray() {
-    const bookPlaceHolder = document.querySelector('[data-book-place-holder]'); 
-
     for (i = 0; i < myLibrary.length; i++) {
-        // bookPlaceHolder.appendChild(bookCard);
-        // console.log(bookCard);
+        console.log(myLibrary[i]);
     }
-
-    bookPlaceHolder.append(book.title);
-    bookPlaceHolder.appendChild(document.createElement('br'));
-    bookPlaceHolder.append(book.author);
-    bookPlaceHolder.appendChild(document.createElement('br'));
-    bookPlaceHolder.append(book.numOfPages);
-    bookPlaceHolder.appendChild(document.createElement('br'));
-    bookPlaceHolder.append(book.readStatus);
 }
 
 // added an event listener to the "Add New Book" button that will listen for a click
