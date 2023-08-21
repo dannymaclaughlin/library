@@ -2,25 +2,23 @@
 const addNewBookButton = document.querySelector('[data-new-book-button]');
 const bookPlaceHolder = document.querySelector('[data-book-place-holder]'); 
 
-// create elements
-const lineBreak = document.createElement('br');
-
 // declare an empty array
 let myLibrary = [];
 
 // build  the book constructor
 function Book(title, author, numOfPages, readStatus) {
-    this.title = title
-    this.author = author
-    this.numOfPages = numOfPages
-    this.readStatus = readStatus
-    this.info = function() {
-      return `Title of book: ${title}<br>
-      Author: ${author}<br>
-      Number of pages: ${numOfPages}<br>
-      Have you read this book? ${readStatus}`
-    }
-}
+    this.title = title;
+    this.author = author;
+    this.numOfPages = numOfPages;
+    this.readStatus = readStatus;
+};
+
+Book.prototype.info = function() {
+      return `Title of book: ${this.title}<br>
+      Author: ${this.author}<br>
+      Number of pages: ${this.numOfPages}<br>
+      Have you read this book? ${this.readStatus}`
+};
 
 // built function that will allow for user input of the book information
 // created "book" variable that calls on the Book constructor to turn the user inputted info into a book object
@@ -33,20 +31,20 @@ function addBookToLibrary() {
     readStatus = prompt("Have you read this book yet? yes/no");
 
     const book = new Book(title, author, numOfPages, readStatus);
-    
     myLibrary.push(book);
-    
-    // append the user inputted values to .bookPlaceHolder div on the page
-
-    bookPlaceHolder.innerHTML += book.info();
     
     displayArray();
 }
 
 // this function will iterate through the myLibrary array and console.log each array item(book)
 function displayArray() {
+    bookPlaceHolder.innerHTML = ''
+    
     for (i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i]);
+        const bookInfo = myLibrary[i].info();
+        const bookElement = document.createElement('div');
+        bookElement.innerHTML = bookInfo;
+        bookPlaceHolder.appendChild(bookElement);
     }
 }
 
