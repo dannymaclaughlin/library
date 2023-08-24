@@ -41,7 +41,7 @@
 }
 
 .button-section {
-    /* border: 3px solid pink; */
+    border: 3px solid pink;
     
     display: flex;
     align-items: center;
@@ -58,12 +58,21 @@ button {
     padding: 1em;
 }
 
-.book-place-holder {
-    border: 3px solid green;
-    /* width: 50px;
-    height: 50px; */
+.form-container {
+    width: 25em;
+    height: 20em;
+    padding: 1em;
+    display: grid;
 
-    /* background-color: #eff6ff; */
-    display: flex;
-    grid
+    border: 1px solid red;
+}
+
+dialog {
+    position: absolute;
+    top: 40vh;
+    left: 37vw;
+}
+
+.label-input {
+    display: grid;
 }

@@ -14,11 +14,40 @@
         </section>
 
         <section class="main-content">
+            <!-- new book button (under the "book library" logo) -->
             <div class="button-section">
                 <button data-new-book-button class="add-new-book-button">Add New Book</button>
             </div>
             
-            <div data-book-place-holder class="book-place-holder"></div>
+            <div data-book-place-holder class="book-place-holder"></div> 
+
+            <dialog id="formDialog">
+                <form>
+                    <p class="form-container">
+                        <label for="bookTitle" class="label-input">
+                            Book Title:
+                            <input type="text" name="bookTitle" id="bookTitleValue" class="form-input"/>
+                        </label>
+                        <br>
+                        <label for="bookAuthor" class="label-input">
+                            Book Author:
+                            <input type="text" name="bookAuthor" id="bookAuthorValue" class="form-input"/>
+                        </label>
+                        <br>
+                        <label for="numOfPages" class="label-input">
+                            Number of pages:
+                            <input type="text" name="numOfPages" id="numOfPagesValue" class="form-input"/>
+                        </label>
+                        <br>
+                        <label for="readStatus" class="label-input">
+                            Read status:
+                            <input type="text" name="readStatus" id="readStatusValue" class="form-input"/>
+                        </label>
+                        <br>
+                        <button id="submitButton">Submit</button>
+                    </p>
+                </form>
+            </dialog>
         </section>
     </div>
 
