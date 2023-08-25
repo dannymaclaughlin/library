@@ -120,6 +120,8 @@ showFormDialog.addEventListener('submit', (event) => {
     myLibrary.push(book);
 
     showFormDialog.close();
+
+    console.log(myLibrary);
 })
 
 // add a button (to each book's display)
