@@ -93,9 +93,6 @@ Book.prototype.info = function() {
 // make a function 
 //     take in user input
 //     store new book objects in the array
-function addBookToLibrary() {
-    title = bookTitleInput.value;
-}
 
 // make a function 
 //     loop through the array
@@ -109,6 +106,20 @@ function addBookToLibrary() {
 //         read status 
 addNewBookButton.addEventListener('click', () => {
     showFormDialog.showModal();
+})
+
+showFormDialog.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    title = bookTitleInput.value;
+    author = bookAuthorInput.value;
+    numOfPages = numOfPagesInput.value;
+    readStatus = readStatusInput.value;
+
+    const book = new Book(title, author, numOfPages, readStatus);
+    myLibrary.push(book);
+
+    showFormDialog.close();
 })
 
 // add a button (to each book's display)
