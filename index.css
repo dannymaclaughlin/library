@@ -32,18 +32,18 @@
 
 
 .main-content {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
     display: grid;
     grid-template-rows: .5fr 4fr;
 }
 
 .book-place-holder {
-    border: 3px solid green;
+    /* border: 3px solid green; */
 }
 
 .button-section {
-    border: 3px solid pink;
+    /* border: 3px solid pink; */
     
     display: flex;
     align-items: center;
