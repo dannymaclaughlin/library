@@ -11,7 +11,25 @@ let myLibrary = [
         "author": "steve",
         "number of pages": 2,
         "read status": "no",
-    }
+    },
+    {
+        "title": "potatoes vol. 2",
+        "author": "steve",
+        "number of pages": 2,
+        "read status": "no",
+    },
+    {
+        "title": "potatoes vol. 2",
+        "author": "steve",
+        "number of pages": 2,
+        "read status": "no",
+    },
+    {
+        "title": "potatoes vol. 2",
+        "author": "steve",
+        "number of pages": 2,
+        "read status": "no",
+    },
 ];
 
 // create a book object constructor
@@ -35,12 +53,17 @@ function addBookToLibrary(title, author, numOfPages, readStatus) {
 function displayBook() {
     let bookPlaceholder = document.querySelector('[data-book-placeholder]');
     bookPlaceholder.innerHTML = '';
+    bookPlaceholder.style.display = "grid";
+    bookPlaceholder.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+    bookPlaceholder.style.height = "fit-content";
     
     for (let i = 0; i < myLibrary.length; i++) {
         const book = myLibrary[i];
         const bookElement = document.createElement('div');
         // border toggle for bookElement
-        // bookElement.style.border = "1px solid black";
+        bookElement.style.border = "1px solid black";
+        bookElement.style.padding = "5px";
+        bookElement.style.width = "fit-content";
 
         const titleElement = document.createElement('h3');
         titleElement.innerText = `Title: ${book.title}`;
