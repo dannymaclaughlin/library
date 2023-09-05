@@ -5,6 +5,12 @@ let myLibrary = [
         "author": "steve",
         "number of pages": 1,
         "read status": "yes",
+    },
+    {
+        "title": "potatoes vol. 2",
+        "author": "steve",
+        "number of pages": 2,
+        "read status": "no",
     }
 ];
 
@@ -27,8 +33,32 @@ function addBookToLibrary(title, author, numOfPages, readStatus) {
 //     loop through the array
 //         display each book object on the page
 function displayBook() {
+    let bookPlaceholder = document.querySelector('[data-book-placeholder]');
+    bookPlaceholder.innerHTML = '';
+    
     for (let i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i]);
+        const book = myLibrary[i];
+        const bookElement = document.createElement('div');
+        // border toggle for bookElement
+        // bookElement.style.border = "1px solid black";
+
+        const titleElement = document.createElement('h3');
+        titleElement.innerText = `Title: ${book.title}`;
+        bookElement.appendChild(titleElement);
+
+        const authorElement = document.createElement('p');
+        authorElement.innerText = `Author: ${book.author}`;
+        bookElement.appendChild(authorElement);
+        
+        const pagesElement = document.createElement('p');
+        pagesElement.innerText = `pages: ${book.numOfPages}`;
+        bookElement.appendChild(pagesElement);
+
+        const readElement = document.createElement('p');
+        readElement.innerText = `read: ${book.readStatus}`;
+        bookElement.appendChild(readElement);
+
+        bookPlaceholder.appendChild(bookElement);
     }
 }
 

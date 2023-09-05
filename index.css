@@ -38,8 +38,8 @@
     grid-template-rows: .5fr 4fr;
 }
 
-.book-place-holder {
-    /* border: 3px solid green; */
+.book-placeholder {
+    border: 3px solid green;
 }
 
 .button-section {
