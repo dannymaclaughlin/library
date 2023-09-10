@@ -28,6 +28,7 @@ function displayBook() {
     bookPlaceholder.style.display = "grid";
     bookPlaceholder.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     bookPlaceholder.style.height = "fit-content";
+    bookPlaceholder.style.gap = "5px";
     // bookPlaceholder.style.border = "3px solid pink";
     
     for (let i = 0; i < myLibrary.length; i++) {
@@ -36,7 +37,10 @@ function displayBook() {
         // bookElement styling
         // bookElement.style.border = "3px solid black";
         bookElement.style.padding = "5px";
-        bookElement.style.width = "fit-content";
+        // bookElement.style.width = "fit-content";
+        bookElement.style.backgroundColor = "white";
+        bookElement.style.borderRadius = ".25rem";
+        bookElement.style.padding = ".5rem";
 
         const titleElement = document.createElement('h3');
         titleElement.innerText = `Title: ${book.title}`;
