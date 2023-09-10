@@ -98,7 +98,6 @@ function displayBook() {
 let newBookButton = document.querySelector('[data-new-book-button]');
 
 newBookButton.addEventListener('click', () => {
-    // console.log('hello');
     addNewBook();
 })
 

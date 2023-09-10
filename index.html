@@ -19,11 +19,54 @@
                 <button data-new-book-button class="new-book-button">Add New Book</button>
             </div>
             <!-- area below the "add new book button" aka main content section-->
-            <div data-book-placeholder class="book-placeholder"></div> 
+            <div data-book-placeholder class="book-placeholder">
+                
+            </div> 
 
-            <dialog data-modal>
-                <p>this is a test</p>
+            <dialog data-modal class="modal">
+                <!-- <p>this is a test</p> -->
+
+                <form>
+                    <div class="form-container">
+                        <label for="bookTitle">
+                            Book Title:
+                            <input type="text" name="bookTitle" id="bookTitleValue" class="form-input" required/>
+                        </label>
+                        <br>
+                        <label for="bookAuthor">
+                            Book Author:
+                            <input type="text" name="bookAuthor" id="bookAuthorValue" class="form-input" required/>
+                        </label>
+                        <br>
+                        <label for="numOfPages">
+                            Number of pages:
+                            <input type="text" name="numOfPages" id="numOfPagesValue" class="form-input" required/>
+                        </label>
+                        <br>
+                        <div class="read-status">
+                            <legend>Read Status:</legend>
+                            <div>
+                                <input type="radio" id="yes" name="choice" value="yes" />
+                                <label for="yes">Yes</label>
+    
+                                <input type="radio" id="no" name="choice" value="no" required/>
+                                <label for="no">No</label>
+                            </div>
+
+                        </div>
+                        <br>
+                        <button id="submitButton">Submit</button>
+                    </div>
+                </form>
             </dialog>
+
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
 
             <!-- <dialog id="formDialog">
                 <form>
@@ -52,9 +95,3 @@
                     </p>
                 </form>
             </dialog> -->
-        </section>
-    </div>
-
-    <script src="index.js"></script>
-</body>
-</html>
