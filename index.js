@@ -28,13 +28,13 @@ function displayBook() {
     bookPlaceholder.style.display = "grid";
     bookPlaceholder.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     bookPlaceholder.style.height = "fit-content";
-    bookPlaceholder.style.border = "3px solid pink";
+    // bookPlaceholder.style.border = "3px solid pink";
     
     for (let i = 0; i < myLibrary.length; i++) {
         const book = myLibrary[i];
         const bookElement = document.createElement('div');
         // bookElement styling
-        bookElement.style.border = "3px solid black";
+        // bookElement.style.border = "3px solid black";
         bookElement.style.padding = "5px";
         bookElement.style.width = "fit-content";
 
@@ -47,11 +47,11 @@ function displayBook() {
         bookElement.appendChild(authorElement);
         
         const pagesElement = document.createElement('p');
-        pagesElement.innerText = `pages: ${book["number of pages"]}`;
+        pagesElement.innerText = `pages: ${book["numOfPages"]}`;
         bookElement.appendChild(pagesElement);
 
         const readElement = document.createElement('p');
-        readElement.innerText = `read: ${book["read status"]}`;
+        readElement.innerText = `read: ${book["readStatus"]}`;
         bookElement.appendChild(readElement);
 
         bookPlaceholder.appendChild(bookElement);
@@ -74,6 +74,9 @@ function addNewBook() {
     addBookToLibrary(title, author, numOfPages, readValue);
     console.log(myLibrary);
     document.querySelector('[data-book-form]').reset();
+    displayBook();
+    let modal = document.querySelector('[data-modal]')
+    modal.close();
 }
 
 
@@ -85,6 +88,7 @@ newBookButton.addEventListener('click', () => {
 
     let submitForm = document.querySelector('[data-book-form]');
     submitForm.addEventListener('submit', addNewBook);
+
 });
 
 // add a button (to each book's display)
