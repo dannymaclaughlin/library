@@ -73,6 +73,7 @@ function addNewBook() {
     let readValue = document.querySelector('input[name="readStatus"]:checked').value;
     addBookToLibrary(title, author, numOfPages, readValue);
     console.log(myLibrary);
+    document.querySelector('[data-book-form]').reset();
 }
 
 
