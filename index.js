@@ -71,8 +71,7 @@ function addNewBook() {
     let author = document.getElementById('bookAuthorValue').value;
     let numOfPages = document.getElementById('numOfPagesValue').value;
     let readValue = document.querySelector('input[name="readStatus"]:checked').value;
-    let newBook = new Book(title, author, numOfPages, readValue);
-    myLibrary.push(newBook);
+    addBookToLibrary(title, author, numOfPages, readValue);
     console.log(myLibrary);
 }
 
