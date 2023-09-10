@@ -1,36 +1,5 @@
 // make an array
-let myLibrary = [
-    {
-        "title": "potatoes vol. 1",
-        "author": "steve",
-        "number of pages": 1,
-        "read status": "yes",
-    },
-    {
-        "title": "potatoes vol. 2",
-        "author": "steve",
-        "number of pages": 2,
-        "read status": "no",
-    },
-    {
-        "title": "potatoes vol. 3",
-        "author": "steve",
-        "number of pages": 2,
-        "read status": "no",
-    },
-    {
-        "title": "potatoes vol. 4",
-        "author": "steve",
-        "number of pages": 2,
-        "read status": "no",
-    },
-    {
-        "title": "potatoes vol. 5",
-        "author": "steve",
-        "number of pages": 2,
-        "read status": "no",
-    },
-];
+let myLibrary = [];
 
 // create a book object constructor
 function Book(title, author, numOfPages, readStatus) {
@@ -95,16 +64,28 @@ function displayBook() {
 //         book author
 //         number of pages
 //         read status
+function addNewBook() {
+    event.preventDefault();
+
+    let title = document.getElementById('bookTitleValue').value;
+    let author = document.getElementById('bookAuthorValue').value;
+    let numOfPages = document.getElementById('numOfPagesValue').value;
+    let readValue = document.querySelector('input[name="readStatus"]:checked').value;
+    let newBook = new Book(title, author, numOfPages, readValue);
+    myLibrary.push(newBook);
+    console.log(myLibrary);
+}
+
+
 let newBookButton = document.querySelector('[data-new-book-button]');
 
 newBookButton.addEventListener('click', () => {
-    addNewBook();
-})
-
-function addNewBook() {
     let modal = document.querySelector('[data-modal]');
     modal.showModal();
-};
+
+    let submitForm = document.querySelector('[data-book-form]');
+    submitForm.addEventListener('submit', addNewBook);
+});
 
 // add a button (to each book's display)
 //     remove book from library(array)
