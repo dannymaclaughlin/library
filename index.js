@@ -38,7 +38,7 @@ function displayBook() {
         // bookElement styling
         // bookElement.style.border = "3px solid black";
         bookElement.style.padding = "5px";
-        bookElement.style.height = "8rem";
+        bookElement.style.height = "fit-content";
         bookElement.style.backgroundColor = "white";
         bookElement.style.borderRadius = ".25rem";
         bookElement.style.padding = ".5rem";
@@ -60,13 +60,26 @@ function displayBook() {
         bookElement.appendChild(readElement);
 
 
-        let removeBook = document.createElement('button')
+        let removeBook = document.createElement('button');
         removeBook.innerText = 'Remove book';
         removeBook.classList.add('removeBook');
         removeBook.addEventListener('click', () => {
             bookElement.parentNode.removeChild(bookElement);
         })
         bookElement.appendChild(removeBook);
+
+        let changeReadStatus = document.createElement('button');
+        changeReadStatus.innerText = 'Mark as read';
+        changeReadStatus.addEventListener('click', () => {
+            if (readElement.innerText.toLowerCase() === "no" || "read: no") {
+                readElement.innerText = "read: yes";
+            } else if (readElement.innerText === "read: yes") {
+                readElement.innerText = "read: no";
+            }
+        });
+        bookElement.appendChild(changeReadStatus);
+        // bookElement.appendChild(readElement);
+        
 
         bookPlaceholder.appendChild(bookElement);
     }
