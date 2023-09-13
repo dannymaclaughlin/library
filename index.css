@@ -50,8 +50,19 @@
     justify-content: center;
 }
 
+input[type="submit"],
 button {
     background-color: #93c5fd;
+    color: #162554;
+    
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #698aaf;
     color: #162554;
     
     border: none;

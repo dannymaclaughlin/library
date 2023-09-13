@@ -34,10 +34,11 @@ function displayBook() {
     for (let i = 0; i < myLibrary.length; i++) {
         let book = myLibrary[i];
         let bookElement = document.createElement('div');
+        
         // bookElement styling
         // bookElement.style.border = "3px solid black";
         bookElement.style.padding = "5px";
-        // bookElement.style.width = "fit-content";
+        bookElement.style.height = "8rem";
         bookElement.style.backgroundColor = "white";
         bookElement.style.borderRadius = ".25rem";
         bookElement.style.padding = ".5rem";
@@ -57,6 +58,15 @@ function displayBook() {
         let readElement = document.createElement('p');
         readElement.innerText = `read: ${book["readStatus"]}`;
         bookElement.appendChild(readElement);
+
+
+        let removeBook = document.createElement('button')
+        removeBook.innerText = 'Remove book';
+        removeBook.classList.add('removeBook');
+        removeBook.addEventListener('click', () => {
+            bookElement.parentNode.removeChild(bookElement);
+        })
+        bookElement.appendChild(removeBook);
 
         bookPlaceholder.appendChild(bookElement);
     }
@@ -81,8 +91,7 @@ function addNewBook() {
     displayBook();
     let modal = document.querySelector('[data-modal]')
     modal.close();
-}
-
+};
 
 let newBookButton = document.querySelector('[data-new-book-button]');
 
