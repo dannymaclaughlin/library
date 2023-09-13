@@ -12,7 +12,7 @@ function Book(title, author, numOfPages, readStatus) {
 // make a function 
 //     takes the user input and stores new book objects in the array
 function addBookToLibrary(title, author, numOfPages, readStatus) {
-    const newBook = new Book(title, author, numOfPages, readStatus);
+    let newBook = new Book(title, author, numOfPages, readStatus);
     myLibrary.push(newBook);
 }
 
@@ -32,8 +32,8 @@ function displayBook() {
     // bookPlaceholder.style.border = "3px solid pink";
     
     for (let i = 0; i < myLibrary.length; i++) {
-        const book = myLibrary[i];
-        const bookElement = document.createElement('div');
+        let book = myLibrary[i];
+        let bookElement = document.createElement('div');
         // bookElement styling
         // bookElement.style.border = "3px solid black";
         bookElement.style.padding = "5px";
@@ -42,19 +42,19 @@ function displayBook() {
         bookElement.style.borderRadius = ".25rem";
         bookElement.style.padding = ".5rem";
 
-        const titleElement = document.createElement('h3');
+        let titleElement = document.createElement('h3');
         titleElement.innerText = `Title: ${book.title}`;
         bookElement.appendChild(titleElement);
 
-        const authorElement = document.createElement('p');
+        let authorElement = document.createElement('p');
         authorElement.innerText = `Author: ${book.author}`;
         bookElement.appendChild(authorElement);
         
-        const pagesElement = document.createElement('p');
+        let pagesElement = document.createElement('p');
         pagesElement.innerText = `pages: ${book["numOfPages"]}`;
         bookElement.appendChild(pagesElement);
 
-        const readElement = document.createElement('p');
+        let readElement = document.createElement('p');
         readElement.innerText = `read: ${book["readStatus"]}`;
         bookElement.appendChild(readElement);
 
