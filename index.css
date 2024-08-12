@@ -32,12 +32,14 @@
 
 
 .main-content {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
     display: grid;
     grid-template-rows: .5fr 4fr;
-    /* align-items: center;
-    justify-content: center; */
+}
+
+.book-placeholder {
+    /* border: 3px solid green; */
 }
 
 .button-section {
@@ -46,9 +48,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
+input[type="submit"],
 button {
     background-color: #93c5fd;
     color: #162554;
@@ -58,12 +60,44 @@ button {
     padding: 1em;
 }
 
-.book-place-holder {
-    border: 3px solid green;
-    /* width: 50px;
-    height: 50px; */
+input[type="submit"]:hover,
+button:hover {
+    background-color: #698aaf;
+    color: #162554;
+    
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+}
 
-    /* background-color: #eff6ff; */
-    display: flex;
-    grid
+.form-container {
+    /* border: 3px solid red; */
+
+    display: grid;
+    width: 25em;
+    height: 20em;
+    padding: 2.5em;
+}
+
+.modal {
+    position: fixed;
+    padding: 0.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.50rem;
+    z-index: 10;
+    border: 2px solid white;
+}
+
+.label-input {
+    display: grid;
+}
+
+.read-status {
+    /* border: 2px solid blue; */
+    
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    width: fit-content;
 }
