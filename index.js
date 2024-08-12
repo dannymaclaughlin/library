@@ -1,20 +1,21 @@
 // make an array
 let myLibrary = [];
 
-// create a book object constructor
-function Book(title, author, numOfPages, readStatus) {
-    this.title = title;
-    this.author = author;
-    this.numOfPages = numOfPages;
-    this.readStatus = readStatus;
-};
+class Book {
+    constructor(title, author, numOfPages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.numOfPages = numOfPages;
+        this.readStatus = readStatus;
+    }
 
-// make a function 
-//     takes the user input and stores new book objects in the array
-function addBookToLibrary(title, author, numOfPages, readStatus) {
-    let newBook = new Book(title, author, numOfPages, readStatus);
-    myLibrary.push(newBook);
-}
+    info() {
+        return `Title of book: ${title}<br>
+                Author: ${author}<br>
+                Number of pages: ${numOfPages}<br>
+                Have you read this book? ${readStatus}<br>`
+    }
+};
 
 // make a function 
 //     loop through the array
