@@ -8,19 +8,21 @@ const lineBreak = document.createElement('br');
 // declare an empty array
 let myLibrary = [];
 
-// build  the book constructor
-function Book(title, author, numOfPages, readStatus) {
-    this.title = title
-    this.author = author
-    this.numOfPages = numOfPages
-    this.readStatus = readStatus
-    this.info = function() {
-      return `Title of book: ${title}<br>
-      Author: ${author}<br>
-      Number of pages: ${numOfPages}<br>
-      Have you read this book? ${readStatus}`
+class Book {
+    constructor(title, author, numOfPages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.numOfPages = numOfPages;
+        this.readStatus = readStatus;
     }
-}
+
+    info() {
+        return `Title of book: ${title}<br>
+                Author: ${author}<br>
+                Number of pages: ${numOfPages}<br>
+                Have you read this book? ${readStatus}<br>`
+    }
+};
 
 // built function that will allow for user input of the book information
 // created "book" variable that calls on the Book constructor to turn the user inputted info into a book object
