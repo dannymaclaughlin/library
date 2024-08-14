@@ -99,8 +99,8 @@ function displayBook() {
 //         book author
 //         number of pages
 //         read status
-function addNewBook() {
-    event.preventDefault();
+function addNewBook(e) {
+    e.preventDefault();
 
     let title = document.getElementById('bookTitleValue').value;
     let author = document.getElementById('bookAuthorValue').value;
