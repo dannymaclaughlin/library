@@ -18,6 +18,13 @@ class Book {
 };
 
 // make a function 
+//     takes the user input and stores new book objects in the array
+function addBookToLibrary(title, author, numOfPages, readStatus) {
+    let newBook = new Book(title, author, numOfPages, readStatus);
+    myLibrary.push(newBook);
+}
+
+// make a function 
 //     loop through the array
 //         display each book object on the page
 function displayBook() {
@@ -25,7 +32,7 @@ function displayBook() {
     // ...the variable "bookPlaceholder".
     let bookPlaceholder = document.querySelector('[data-book-placeholder]');
     bookPlaceholder.innerHTML = '';
-    // bookPlaceholder styling
+    // bookPlaceholder stylxing
     bookPlaceholder.style.display = "grid";
     bookPlaceholder.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     bookPlaceholder.style.height = "fit-content";
@@ -99,7 +106,9 @@ function addNewBook() {
     let author = document.getElementById('bookAuthorValue').value;
     let numOfPages = document.getElementById('numOfPagesValue').value;
     let readValue = document.querySelector('input[name="readStatus"]:checked').value;
+
     addBookToLibrary(title, author, numOfPages, readValue);
+    
     console.log(myLibrary);
     document.querySelector('[data-book-form]').reset();
     displayBook();
