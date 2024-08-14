@@ -86,7 +86,6 @@ function displayBook() {
             }
         });
         bookElement.appendChild(changeReadStatus);
-        // bookElement.appendChild(readElement);
         
 
         bookPlaceholder.appendChild(bookElement);
@@ -126,11 +125,3 @@ newBookButton.addEventListener('click', () => {
     submitForm.addEventListener('submit', addNewBook);
 
 });
-
-// add a button (to each book's display)
-//     remove book from library(array)
-
-// add a button (to each book's display)
-//     create a function 
-//         on the book prototype instance
-//             toggle read status
